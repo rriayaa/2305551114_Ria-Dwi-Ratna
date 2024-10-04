@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penilaian Pemrograman Internet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Penilaian Matakuliah Pemrograman Internet</h2>
+        <form name="nilaiForm" action="process.php" method="POST" onsubmit="return validateForm()">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required><br>
+            
+            <label for="nim">NIM:</label>
+            <input type="text" id="nim" name="nim" required><br>
+
+            <label for="nilai">Nilai Angka (0-100):</label>
+            <input type="number" id="nilai" name="nilai" min="0" max="100" required><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Script untuk validasi JavaScript -->
+    <script>
+        function validateForm() {
+            var nama = document.forms["nilaiForm"]["nama"].value;
+            var nim = document.forms["nilaiForm"]["nim"].value;
+            var nilai = document.forms["nilaiForm"]["nilai"].value;
+
+            // Validasi nama hanya boleh huruf
+            var namaRegex = /^[a-zA-Z\s]+$/;
+            if (!namaRegex.test(nama)) {
+                alert("Nama hanya boleh diisi dengan huruf.");
+                return false;
+            }
+
+            // Validasi NIM hanya boleh angka
+            if (!/^\d+$/.test(nim)) {
+                alert("NIM hanya boleh diisi dengan angka.");
+                return false;
+            }
+
+            // Validasi nilai hanya boleh angka dan harus di antara 0-100
+            if (isNaN(nilai) || nilai < 0 || nilai > 100) {
+                alert("Nilai harus berupa angka antara 0 hingga 100.");
+                return false;
+            }
+
+            return true; // Jika validasi berhasil, form akan dikirim
+        }
+    </script>
+</body>
+</html>

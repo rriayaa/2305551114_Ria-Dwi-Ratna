@@ -1,0 +1,76 @@
+body {
+    background-color: #fce4ec; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background-color: #ffffff; 
+    padding: 20px;
+    border-radius: 15px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+h2 {
+    color: #ec407a; 
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    color: #ff1493; 
+    display: block;
+    margin-bottom: 5px; 
+    text-align: left; 
+    font-weight: bold; 
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%; 
+    padding: 12px; 
+    margin: 10px 0 20px 0; 
+    border: 2px solid #ff1493;
+    border-radius: 8px; 
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(255, 105, 180, 0.2); 
+}
+
+/* Jika kolom sudah diisi */
+input[type="text"]:not(:placeholder-shown), 
+input[type="number"]:not(:placeholder-shown) {
+    background-color: #fff0f5; 
+}
+
+/* Mengubah border dan background saat input diklik*/
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #ff69b4; /* Ganti warna border saat fokus */
+    outline: none; /* Menghilangkan outline default */
+    background-color: #ffffff; /* Putih saat fokus */
+    box-shadow: 0 6px 10px rgba(255, 105, 180, 0.4); /* Efek bayangan lebih dalam saat fokus */
+}
+
+input[type="submit"] {
+    background-color: #ec407a; /* Pink cerah */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 105, 180, 0.2); /* Efek bayangan pada tombol */
+}
+
+input[type="submit"]:hover {
+    background-color: #ff1493; /* Warna pink lebih terang saat hover */
+    box-shadow: 0 6px 10px rgba(255, 105, 180, 0.4); /* Bayangan lebih dalam saat hover */
+}
